@@ -8,8 +8,6 @@ public class JavaCalc {
 
 	public static void main(String[] args) {
 		int num1=100;
-		int num2=440;
-
 		num1 = 10;
 		int a = num1++ / 2;
 		System.out.println(a);
