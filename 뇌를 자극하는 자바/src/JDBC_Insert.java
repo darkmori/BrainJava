@@ -11,7 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-class JDBC_Update {
+class JDBC_Insert {
 	public static void main(String args[]) {
 		// 1단계: DB연결을 위한 커넥션 인터페이스
 		Connection conn = null;
@@ -33,12 +33,12 @@ class JDBC_Update {
 
 			// DB SQL작업
 			stmt = conn.createStatement();
-			String sql = "update person SET age=22 WHERE jumincd='7803101574311'";
+			String sql = "INSERT INTO person (jumincd,pname,gender,age) VALUES('950705248846','강감찬','m',40)";
 			int changeRecord = stmt.executeUpdate(sql);
 
 			// 4단계: DB연결을 종료한다.
 			conn.close();
-			System.out.println(changeRecord + "건이 수정되었습니다.");
+			System.out.println(changeRecord + "건이 추가되었습니다.");
 		} catch (ClassNotFoundException cnfe) {
 			System.out.println("해당 클래스를 찾을 수 없습니다." + cnfe.getMessage());
 
