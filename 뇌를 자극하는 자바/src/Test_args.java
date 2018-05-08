@@ -1,4 +1,3 @@
-import javax.swing.plaf.synth.SynthSeparatorUI;
 
 /**
  * 2018. 5. 8. Dev By Jeong.K.S
