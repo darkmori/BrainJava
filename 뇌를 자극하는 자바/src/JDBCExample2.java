@@ -16,6 +16,10 @@ class JDBCExample2 {
 		ResultSet rs = null;
 		// try~catch문에서 DB연결중에 예외가 발생하는지를 검사.
 		try {
+			String jumincd = null;
+			String pname = null;
+			String gender = null;
+			int age = 0;
 			// 2단계 :JDBC드라이버를 로드한다
 			Class.forName("com.mysql.jdbc.Driver");
 			// 3단계: 드라이버매니저 클래스는 DB를 연결한다.
@@ -29,16 +33,17 @@ class JDBCExample2 {
 			System.out.println("***주민번호***이름---성별---나이");
 
 			while (rs.next()) {
-				String jumincd = rs.getString(1);
-				String pname = rs.getString(2);
-				String gender = rs.getString(3);
-				int age = rs.getInt(4);
+				jumincd = rs.getString(1);// rs.getString(jumincd);
+				pname = rs.getString(2);
+				gender = rs.getString(3);
+				age = rs.getInt(4);
 
-				// System.out.println(jumincd + "---" + pname + "---" + gender + "---" + age);
-				System.out.printf("%8s %s %s%n %d", jumincd, pname, gender, age);
+				System.out.println(jumincd + "---" + pname + "---" + gender + "---" + age);
 			}
 			// 4단계: DB연결을 종료한다.
 			conn.close();
+			System.out.println("=====================================");
+			System.out.println(jumincd + "---" + pname + "---" + gender + "---" + age);
 		} catch (ClassNotFoundException cnfe) {
 			System.out.println("해당 클래스를 찾을 수 없습니다." + cnfe.getMessage());
 
