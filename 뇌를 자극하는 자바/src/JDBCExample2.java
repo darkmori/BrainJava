@@ -25,7 +25,7 @@ class JDBCExample2 {
 			// 커넥션 객체가 Statement객채를 생성
 			stmt = conn.createStatement();
 			// DML SQL Query 실행후 결과를 저장
-			rs = stmt.executeQuery("select jumincd, pname, gender, age from person");
+			rs = stmt.executeQuery("select jumincd, pname, gender, age from person where gender ='m'");
 			System.out.println("***주민번호***이름---성별---나이");
 
 			while (rs.next()) {
@@ -34,7 +34,8 @@ class JDBCExample2 {
 				String gender = rs.getString(3);
 				int age = rs.getInt(4);
 
-				System.out.println(jumincd + "---" + pname + "---" + gender + "---" + age);
+				// System.out.println(jumincd + "---" + pname + "---" + gender + "---" + age);
+				System.out.printf("%8s %s %s%n %d", jumincd, pname, gender, age);
 			}
 			// 4단계: DB연결을 종료한다.
 			conn.close();
