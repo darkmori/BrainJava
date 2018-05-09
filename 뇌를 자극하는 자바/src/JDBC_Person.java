@@ -17,11 +17,11 @@ class Person {
 	String gender = null;
 	int age = 0;
 
-	public Person()// ê¸°ë³¸ ìƒì„±ì
+	public Person()// ±âº» »ı¼ºÀÚ
 	{
-		this.jumincd = "ì£¼ë¯¼ë²ˆí˜¸ ì…ë ¥ ëˆ„ë½";
-		this.pname = "ì´ë¦„ ì…ë ¥ ëˆ„ë½";
-		this.gender = "ì„±ë³„ ì…ë ¥ ëˆ„ë½";
+		this.jumincd = "ÁÖ¹Î¹øÈ£ ÀÔ·Â ´©¶ô";
+		this.pname = "ÀÌ¸§ ÀÔ·Â ´©¶ô";
+		this.gender = "¼ºº° ÀÔ·Â ´©¶ô";
 		this.age = 0;
 	}
 
@@ -62,26 +62,26 @@ class Person {
 class JDBC_Person {
 	public static void main(String args[]) {
 
-		Person[] persons = new Person[3];// ë°°ì—´ê°ì²´
+		Person[] persons = new Person[3];// ¹è¿­°´Ã¼
 
 		for (int i = 0; i < persons.length; i++) {
-			persons[i] = new Person(); // ìƒì„±ì í˜¸ì¶œí•˜ì—¬ ë°°ì—´ ë ˆí¼ëŸ°ìŠ¤ ëŒ€ì…
+			persons[i] = new Person(); // »ı¼ºÀÚ È£ÃâÇÏ¿© ¹è¿­ ·¹ÆÛ·±½º ´ëÀÔ
 		}
 
 		// for (int i = 0; i < persons.length; i++) {
-		// System.out.println("ì£¼ë¯¼ë²ˆí˜¸: " + persons[i].getJumincd());
-		// System.out.println("ì´ë¦„: " + persons[i].getPname());
-		// System.out.println("ì„±ë³„: " + persons[i].getGender());
-		// System.out.println("ë‚˜ì´: " + persons[i].getAge());
+		// System.out.println("ÁÖ¹Î¹øÈ£: " + persons[i].getJumincd());
+		// System.out.println("ÀÌ¸§: " + persons[i].getPname());
+		// System.out.println("¼ºº°: " + persons[i].getGender());
+		// System.out.println("³ªÀÌ: " + persons[i].getAge());
 		// }
 
-		// Person person; // ë ˆí¼ëŸ°ìŠ¤ ë³€ìˆ˜ì„ ì–¸
-		// person = new Person();// ê°ì²´ìƒì„± newì—°ì‚°ì ì´ìš©
-		// // í•œì¤„ë¡œ Person person = new Person();
+		// Person person; // ·¹ÆÛ·±½º º¯¼ö¼±¾ğ
+		// person = new Person();// °´Ã¼»ı¼º new¿¬»êÀÚ ÀÌ¿ë
+		// // ÇÑÁÙ·Î Person person = new Person();
 		//
-		// // personê°ì²´ì— ë©¤ë²„í•„ë“œ ì„¸íŒ…
+		// // person°´Ã¼¿¡ ¸â¹öÇÊµå ¼¼ÆÃ
 		// person.setJumincd("800511-1574310");
-		// person.setPname("í™ê¸¸ë™");
+		// person.setPname("È«±æµ¿");
 		// person.setGender("m");
 		// person.setAge(19);
 		//
@@ -95,30 +95,30 @@ class JDBC_Person {
 		// System.out.println(person.gender);
 		// System.out.println(person.age);
 
-		/////////////// JDBCì‹œì‘////////////////
-		// 1ë‹¨ê³„: DBì—°ê²°ì„ ìœ„í•œ ì»¤ë„¥ì…˜ ì¸í„°í˜ì´ìŠ¤
+		/////////////// JDBC½ÃÀÛ////////////////
+		// 1´Ü°è: DB¿¬°áÀ» À§ÇÑ Ä¿³Ø¼Ç ÀÎÅÍÆäÀÌ½º
 		Connection conn = null;
-		// Statement Interface - SQL ì‹¤í–‰.
+		// Statement Interface - SQL ½ÇÇà.
 		Statement stmt = null;
-		// ResultSet Interface - SQL ê²°ê³¼ë¥¼ ì €ì¥
+		// ResultSet Interface - SQL °á°ú¸¦ ÀúÀå
 		ResultSet rs = null;
-		// try~catchë¬¸ì—ì„œ DBì—°ê²°ì¤‘ì— ì˜ˆì™¸ê°€ ë°œìƒí•˜ëŠ”ì§€ë¥¼ ê²€ì‚¬.
+		// try~catch¹®¿¡¼­ DB¿¬°áÁß¿¡ ¿¹¿Ü°¡ ¹ß»ıÇÏ´ÂÁö¸¦ °Ë»ç.
 		try {
 			// String jumincd = null;
 			// String pname = null;
 			// String gender = null;
 			int age = 0;
-			// 2ë‹¨ê³„ :JDBCë“œë¼ì´ë²„ë¥¼ ë¡œë“œí•œë‹¤
+			// 2´Ü°è :JDBCµå¶óÀÌ¹ö¸¦ ·ÎµåÇÑ´Ù
 			Class.forName("com.mysql.jdbc.Driver");
-			// 3ë‹¨ê³„: ë“œë¼ì´ë²„ë§¤ë‹ˆì € í´ë˜ìŠ¤ëŠ” DBë¥¼ ì—°ê²°í•œë‹¤.
+			// 3´Ü°è: µå¶óÀÌ¹ö¸Å´ÏÀú Å¬·¡½º´Â DB¸¦ ¿¬°áÇÑ´Ù.
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "12345");
-			System.out.println("ë°ì´í„°ë² ì´ìŠ¤ì— ì ‘ì†í–ˆìŠµë‹ˆë‹¤.");
+			System.out.println("µ¥ÀÌÅÍº£ÀÌ½º¿¡ Á¢¼ÓÇß½À´Ï´Ù.");
 
-			// ì»¤ë„¥ì…˜ ê°ì²´ê°€ Statementê°ì±„ë¥¼ ìƒì„±
+			// Ä¿³Ø¼Ç °´Ã¼°¡ Statement°´Ã¤¸¦ »ı¼º
 			stmt = conn.createStatement();
-			// DML SQL Query ì‹¤í–‰í›„ ê²°ê³¼ë¥¼ ì €ì¥
+			// DML SQL Query ½ÇÇàÈÄ °á°ú¸¦ ÀúÀå
 			rs = stmt.executeQuery("select jumincd, pname, gender, age from person where gender ='m'");
-			System.out.println("ì£¼ë¯¼ë²ˆí˜¸         ì´ë¦„      ì„±ë³„    ë‚˜ì´");
+			System.out.println("ÁÖ¹Î¹øÈ£         ÀÌ¸§      ¼ºº°    ³ªÀÌ");
 			int i = 0;
 
 			while (rs.next()) {
@@ -137,20 +137,20 @@ class JDBC_Person {
 
 				// System.out.println(jumincd + "---" + pname + "---" + gender + "---" + age);
 			}
-			// 4ë‹¨ê³„: DBì—°ê²°ì„ ì¢…ë£Œí•œë‹¤.
+			// 4´Ü°è: DB¿¬°áÀ» Á¾·áÇÑ´Ù.
 			conn.close();
 			System.out.println("=====================================");
 			// System.out.println(jumincd + "---" + pname + "---" + gender + "---" + age);
 			for (i = 0; i < persons.length; i++) {
 
-				System.out.println("ì£¼ë¯¼ë²ˆí˜¸: " + persons[i].getJumincd());
-				System.out.println("ì´ë¦„: " + persons[i].getPname());
-				System.out.println("ì„±ë³„: " + persons[i].getGender());
-				System.out.println("ë‚˜ì´: " + persons[i].getAge());
+				System.out.println("ÁÖ¹Î¹øÈ£: " + persons[i].getJumincd());
+				System.out.println("ÀÌ¸§: " + persons[i].getPname());
+				System.out.println("¼ºº°: " + persons[i].getGender());
+				System.out.println("³ªÀÌ: " + persons[i].getAge());
 
 			}
 		} catch (ClassNotFoundException cnfe) {
-			System.out.println("í•´ë‹¹ í´ë˜ìŠ¤ë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤." + cnfe.getMessage());
+			System.out.println("ÇØ´ç Å¬·¡½º¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù." + cnfe.getMessage());
 
 		} catch (SQLException se) {
 			System.out.println(se.getMessage());

@@ -13,10 +13,10 @@ class JDBCExample0 {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "12345");
-			System.out.println("ë°ì´í„°ë² ì´ìŠ¤ì— ì ‘ì†í–ˆìŠµë‹ˆë‹¤.");
+			System.out.println("µ¥ÀÌÅÍº£ÀÌ½º¿¡ Á¢¼ÓÇß½À´Ï´Ù.");
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery("select pname, address, phoneno from custinfo");
-			System.out.println("ì´ë¦„====================ì£¼ì†Œ================ì „í™”ë²ˆí˜¸");
+			System.out.println("ÀÌ¸§====================ÁÖ¼Ò================ÀüÈ­¹øÈ£");
 
 			while (rs.next()) {
 				String pname = rs.getString(1);
@@ -28,7 +28,7 @@ class JDBCExample0 {
 			conn.close();
 
 		} catch (ClassNotFoundException cnfe) {
-			System.out.println("í•´ë‹¹ í´ë˜ìŠ¤ë¥¼ ì°¾ì„ìˆ˜ ì—†ìŠµë‹ˆë‹¤." + cnfe.getMessage());
+			System.out.println("ÇØ´ç Å¬·¡½º¸¦ Ã£À»¼ö ¾ø½À´Ï´Ù." + cnfe.getMessage());
 		} catch (SQLException se) {
 			System.out.println(se.getMessage());
 		}

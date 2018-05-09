@@ -8,7 +8,7 @@ public class ConditionalOrExample1 {
 	public static void main(String[] args) {
 		int num1 = 0, num2 = 0;
 		if (++num1 > 0 || ++num2 > 0)
-			System.out.println("num1ì´ 0ë³´ë‹¤ í¬ê±°ë‚˜ num2ê°€ 0ë³´ë‹¤ í½ë‹ˆë‹¤.");
+			System.out.println("num1ÀÌ 0º¸´Ù Å©°Å³ª num2°¡ 0º¸´Ù Å®´Ï´Ù.");
 		System.out.println("num1 = " + num1);
 		System.out.println("num2 = " + num2);
 	}

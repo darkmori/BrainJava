@@ -8,22 +8,22 @@ public class PersonInfo {
 
 	public static void main(String[] args) {
 
-		// Class ë³€ìˆ˜
+		// Class º¯¼ö
 		Person obj;
 
-		// ë§¤ê°œë³€ìˆ˜ ì—†ëŠ” default ìƒì„±ì í˜¸ì¶œí•˜ì—¬ ê°ì²´ìƒì„±
+		// ¸Å°³º¯¼ö ¾ø´Â default »ı¼ºÀÚ È£ÃâÇÏ¿© °´Ã¼»ı¼º
 		obj = new Person();
 
-		// String ë§¤ê°œë³€ìˆ˜ 1ê°œìˆëŠ” ìƒì„±ì í˜¸ì¶œí•˜ì—¬ ê°ì²´ìƒì„±
-		// person = new Person("í™ê¸¸ë™");
+		// String ¸Å°³º¯¼ö 1°³ÀÖ´Â »ı¼ºÀÚ È£ÃâÇÏ¿© °´Ã¼»ı¼º
+		// person = new Person("È«±æµ¿");
 
-		// String, int ë§¤ê°œë³€ìˆ˜ 2ê°œìˆëŠ” ìƒì„±ì í˜¸ì¶œí•˜ì—¬ ê°ì²´ìƒì„±
-		// person = new Person("í™ê¸¸ë™", 20);
+		// String, int ¸Å°³º¯¼ö 2°³ÀÖ´Â »ı¼ºÀÚ È£ÃâÇÏ¿© °´Ã¼»ı¼º
+		// person = new Person("È«±æµ¿", 20);
 
-		// int,String ë§¤ê°œë³€ìˆ˜ 2ê°œìˆëŠ” ìƒì„±ì í˜¸ì¶œí•˜ì—¬ ê°ì²´ìƒì„±
-		obj = new Person(20, "í™ê¸¸ë™");
+		// int,String ¸Å°³º¯¼ö 2°³ÀÖ´Â »ı¼ºÀÚ È£ÃâÇÏ¿© °´Ã¼»ı¼º
+		obj = new Person(20, "È«±æµ¿");
 
-		// ë©”ì†Œë“œ í˜¸ì¶œ
+		// ¸Ş¼Òµå È£Ãâ
 		obj.showPerson(obj);
 		obj.showPerson();
 		

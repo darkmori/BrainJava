@@ -2,19 +2,19 @@ import java.sql.*; //package
 
 class JDBCExample1 {
 	public static void main(String args[]) {
-		// 1ë‹¨ê³„: DBì—°ê²°ì„ ìœ„í•œ ì»¤ë„¥ì…˜ ì¸í„°í˜ì´ìŠ¤
+		// 1´Ü°è: DB¿¬°áÀ» À§ÇÑ Ä¿³Ø¼Ç ÀÎÅÍÆäÀÌ½º
 		Connection conn = null;
 		try {
-			// 2ë‹¨ê³„ :JDBCë“œë¼ì´ë²„ë¥¼ ë¡œë“œí•œë‹¤
+			// 2´Ü°è :JDBCµå¶óÀÌ¹ö¸¦ ·ÎµåÇÑ´Ù
 			Class.forName("com.mysql.jdbc.Driver");
-			// 3ë‹¨ê³„: ë“œë¼ì´ë²„ë§¤ë‹ˆì € í´ë˜ìŠ¤ëŠ” DBë¥¼ ì—°ê²°í•œë‹¤.
+			// 3´Ü°è: µå¶óÀÌ¹ö¸Å´ÏÀú Å¬·¡½º´Â DB¸¦ ¿¬°áÇÑ´Ù.
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "12345");
-			System.out.println("ë°ì´í„°ë² ì´ìŠ¤ì— ì ‘ì†í–ˆìŠµë‹ˆë‹¤.");
+			System.out.println("µ¥ÀÌÅÍº£ÀÌ½º¿¡ Á¢¼ÓÇß½À´Ï´Ù.");
 
-			// 4ë‹¨ê³„: DBì—°ê²°ì„ ì¢…ë£Œí•œë‹¤.
+			// 4´Ü°è: DB¿¬°áÀ» Á¾·áÇÑ´Ù.
 			conn.close();
 		} catch (ClassNotFoundException cnfe) {
-			System.out.println("í•´ë‹¹ í´ë˜ìŠ¤ë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤." + cnfe.getMessage());
+			System.out.println("ÇØ´ç Å¬·¡½º¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù." + cnfe.getMessage());
 
 		} catch (SQLException se) {
 			System.out.println(se.getMessage());

@@ -1,11 +1,15 @@
-//package
+
+/**
+ * 
+ */
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-class JDBCExample2 {
+public class JBDC_Delete {
 	public static void main(String args[]) {
 		// 1단계: DB연결을 위한 커넥션 인터페이스
 		Connection conn = null;
@@ -25,24 +29,14 @@ class JDBCExample2 {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "12345");
 			System.out.println("데이터베이스에 접속했습니다.");
 
-			// 커넥션 객체가 Statement객채를 생성
+			// DB SQL작업
 			stmt = conn.createStatement();
-			// DML SQL Query 실행후 결과를 저장
-			rs = stmt.executeQuery("select jumincd, pname, gender, age from person where gender ='m'");
-			System.out.println("***주민번호***이름---성별---나이");
+			String sql = "delete from person where pname = '"+args[0]+"'";//홍길동'
+			int changeRecord = stmt.executeUpdate(sql);
 
-			while (rs.next()) {
-				jumincd = rs.getString(1);// rs.getString(jumincd);
-				pname = rs.getString(2);
-				gender = rs.getString(3);
-				age = rs.getInt(4);
-
-				System.out.println(jumincd + "---" + pname + "---" + gender + "---" + age);
-			}
 			// 4단계: DB연결을 종료한다.
 			conn.close();
-			System.out.println("=====================================");
-			System.out.println(jumincd + "---" + pname + "---" + gender + "---" + age);
+			System.out.println(changeRecord + "건이 수정되었습니다.");
 		} catch (ClassNotFoundException cnfe) {
 			System.out.println("해당 클래스를 찾을 수 없습니다." + cnfe.getMessage());
 

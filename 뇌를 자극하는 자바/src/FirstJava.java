@@ -11,7 +11,7 @@ public class FirstJava {
 		System.out.println("Hello World!");
 
 		int num = Math.abs(-15);
-		System.out.printf("ì ˆëŒ€ê°’:%d\n", num);
+		System.out.printf("Àý´ë°ª:%d\n", num);
 	}
 
 }
