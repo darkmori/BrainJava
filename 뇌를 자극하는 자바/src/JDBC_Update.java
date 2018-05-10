@@ -38,6 +38,7 @@ class JDBC_Update {
 
 			// 4단계: DB연결을 종료한다.
 			conn.close();
+			
 			System.out.println(changeRecord + "건이 수정되었습니다.");
 		} catch (ClassNotFoundException cnfe) {
 			System.out.println("해당 클래스를 찾을 수 없습니다." + cnfe.getMessage());

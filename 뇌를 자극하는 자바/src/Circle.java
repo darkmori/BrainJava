@@ -5,30 +5,30 @@
  */
 
 public class Circle {
-	int radius; // ¿øÀÇ ¹İÁö¸§ ÇÊµå
-	String name; // ¿øÀÇ ÀÌ¸§ ÇÊµå
+	int radius; // ì›ì˜ ë°˜ì§€ë¦„ í•„ë“œ
+	String name; // ì›ì˜ ì´ë¦„ í•„ë“œ
 
-	public Circle() { // ¿øÀÇ »ı¼ºÀÚ
+	public Circle() { // ì›ì˜ ìƒì„±ì
 	}
 
-	public double getArea() { // ¿øÀÇ ¸éÀû °è»ê ¸Ş™“,
+	public double getArea() { // ì›ì˜ ë©´ì  ê³„ì‚° ë©”Â™Â“,
 		return 3.14 * radius * radius;
 	}
 
 	public static void main(String[] args) {
 		Circle pizza;
-		pizza = new Circle(); // Circle °´Ã¼»ı¼º
-		pizza.radius = 10; // ÇÇÀÚÀÇ ¹İÁö¸§À» 10À¸·Î ¼³Á¤
-		pizza.name = "ÀÚ¹ÙÇÇÀÚ"; // ÇÇÀÚÀÇ ¸éÀû ¾Ë¾Æ³»±â
+		pizza = new Circle(); // Circle ê°ì²´ìƒì„±
+		pizza.radius = 10; // í”¼ìì˜ ë°˜ì§€ë¦„ì„ 10ìœ¼ë¡œ ì„¤ì •
+		pizza.name = "ìë°”í”¼ì"; // í”¼ìì˜ ë©´ì  ì•Œì•„ë‚´ê¸°
 		double pizza_area = pizza.getArea();
-		System.out.println(pizza.name + "ÀÇ ¸éÀûÀº " + pizza_area);
+		System.out.println(pizza.name + "ì˜ ë©´ì ì€ " + pizza_area);
 
-		Circle donut = new Circle(); // Circle °´Ã¼ »ı¼º
-		donut.radius = 2; // µµ³ÓÀÇ ¹İÁö¸§À» 2·Î ¼³Á¤
-		donut.name = "ÀÚ¹Ùµµ³Ó"; // µµ³ÓÀÇ ÀÌ¸§ ¼³Á¤
-		double donut_area = donut.getArea(); // µµ³ÓÀÇ ¸éÀû ¾Ë¾Æ³»±â
+		Circle donut = new Circle(); // Circle ê°ì²´ ìƒì„±
+		donut.radius = 2; // ë„ë„›ì˜ ë°˜ì§€ë¦„ì„ 2ë¡œ ì„¤ì •
+		donut.name = "ìë°”ë„ë„›"; // ë„ë„›ì˜ ì´ë¦„ ì„¤ì •
+		double donut_area = donut.getArea(); // ë„ë„›ì˜ ë©´ì  ì•Œì•„ë‚´ê¸°
 
-		System.out.println(donut.name + "ÀÇ ¸éÀûÀº " + donut_area);
+		System.out.println(donut.name + "ì˜ ë©´ì ì€ " + donut_area);
 
 	}
 }

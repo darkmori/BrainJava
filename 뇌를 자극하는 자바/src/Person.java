@@ -9,38 +9,38 @@ public class Person {
 	String name;
 	int age;
 
-	// »ı¼ºÀÚ
+	// ìƒì„±ì
 	public Person() {
 	}
 
-	// ¸Å°³º¯¼ö 1°³ÀÖ´Â »ı¼ºÀÚ
+	// ë§¤ê°œë³€ìˆ˜ 1ê°œìˆëŠ” ìƒì„±ì
 	public Person(String name) {
 		this.name = name;
 	}
 
-	// ¸Å°³º¯¼ö 2°³(String,int)ÀÖ´Â »ı¼ºÀÚ
+	// ë§¤ê°œë³€ìˆ˜ 2ê°œ(String,int)ìˆëŠ” ìƒì„±ì
 	public Person(String name, int age) {
 		this.name = name;
 		this.age = age;
-		System.out.println("Person(String name,int age) ¸Å°³º¯¼ö 2°³ÀÖ´Â »ı¼ºÀÚ È£Ãâ");
+		System.out.println("Person(String name,int age) ë§¤ê°œë³€ìˆ˜ 2ê°œìˆëŠ” ìƒì„±ì í˜¸ì¶œ");
 	}
 
-	// ¸Å°³º¯¼ö 2°³(String,int)ÀÖ´Â »ı¼ºÀÚ
+	// ë§¤ê°œë³€ìˆ˜ 2ê°œ(String,int)ìˆëŠ” ìƒì„±ì
 	public Person(int age, String name) {
 		this.age = age;
 		this.name = name;
-		System.out.println("Person(int age, String name) ¸Å°³º¯¼ö 2°³ÀÖ´Â »ı¼ºÀÚ È£Ãâ");
+		System.out.println("Person(int age, String name) ë§¤ê°œë³€ìˆ˜ 2ê°œìˆëŠ” ìƒì„±ì í˜¸ì¶œ");
 
 	}
 
 	public void showPerson() {
-		System.out.println("ÀÌ¸§: " + name + ", ³ªÀÌ: " + age);
+		System.out.println("ì´ë¦„: " + name + ", ë‚˜ì´: " + age);
 	}
 
 	public void showPerson(Person obj) {
-		System.out.println("showPerson(Person obj)¸Ş¼Òµå È£Ãâ");
-		System.out.println("ÀÌ¸§: " + name);
-		System.out.println("³ªÀÌ: " + age + "ÀÔ´Ï´Ù.");
+		System.out.println("showPerson(Person obj)ë©”ì†Œë“œ í˜¸ì¶œ");
+		System.out.println("ì´ë¦„: " + name);
+		System.out.println("ë‚˜ì´: " + age + "ì…ë‹ˆë‹¤.");
 
 		obj.name = "ichi";
 		obj.age = 15;

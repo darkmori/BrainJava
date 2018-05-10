@@ -7,20 +7,20 @@
 public class ConstrExample2 {
 	public static void main(String[] args) {
 		SubscriberInfo obj1, obj2;
-		obj1 = new SubscriberInfo("¿¬ÈïºÎ", "poorman", "zebi");
-		obj2 = new SubscriberInfo("¿¬³îºÎ", "richman", "money", "02-000-0000", "Å¸¿öÆÓ¸®½º");
+		obj1 = new SubscriberInfo("ì—°í¥ë¶€", "poorman", "zebi");
+		obj2 = new SubscriberInfo("ì—°ë†€ë¶€", "richman", "money", "02-000-0000", "íƒ€ì›ŒíŒ°ë¦¬ìŠ¤");
 
 		printSubscriberInfo(obj1);
 		printSubscriberInfo(obj2);
 	}
 
 	static void printSubscriberInfo(SubscriberInfo obj) {
-		System.out.println("ÀÌ¸§: " + obj.name);
-		System.out.println("¾ÆÀÌµğ: " + obj.id);
-		System.out.println("ºñ¹Ğ¹øÈ£: " + obj.password);
-		System.out.println("ÀüÈ­¹øÈ£: " + obj.phoneNo);
-		System.out.println("ÁÖ¼Ò: " + obj.address);
-		System.out.println(); // ÁÙ¹Ù²Ş ¹®ÀÚ Ãâ·Â
+		System.out.println("ì´ë¦„: " + obj.name);
+		System.out.println("ì•„ì´ë””: " + obj.id);
+		System.out.println("ë¹„ë°€ë²ˆí˜¸: " + obj.password);
+		System.out.println("ì „í™”ë²ˆí˜¸: " + obj.phoneNo);
+		System.out.println("ì£¼ì†Œ: " + obj.address);
+		System.out.println(); // ì¤„ë°”ê¿ˆ ë¬¸ì ì¶œë ¥
 	}
 
 }

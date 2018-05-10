@@ -31,12 +31,15 @@ public class JBDC_Delete {
 
 			// DB SQL작업
 			stmt = conn.createStatement();
-			String sql = "delete from person where pname = '"+args[0]+"'";//홍길동'
+			String sql = "delete from person where pname = '" + args[0] + "'";// 홍길동'
 			int changeRecord = stmt.executeUpdate(sql);
 
 			// 4단계: DB연결을 종료한다.
 			conn.close();
-			System.out.println(changeRecord + "건이 수정되었습니다.");
+			if (changeRecord > 0)
+				System.out.println(changeRecord + "건이 삭제 되었습니다.");
+			else
+				System.out.println("삭제된 데이터는 없습니다.");
 		} catch (ClassNotFoundException cnfe) {
 			System.out.println("해당 클래스를 찾을 수 없습니다." + cnfe.getMessage());
 

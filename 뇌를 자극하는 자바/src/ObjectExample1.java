@@ -16,11 +16,10 @@ public class ObjectExample1 {
 
 		System.out.println(obj);
 		int length = obj.length();
-		System.out.println("¹®ÀÚ¿­" + obj + "ÀÇ ±æÀÌ´Â " + length);
+		System.out.println("ë¬¸ìžì—´" + obj + "ì˜ ê¸¸ì´ëŠ” " + length);
 
-		// replace ¸Þ¼Òµå¸¦ »ç¿ëÇÏ¿© Hi, Java -> Hello, Java ·Î Ä¡È¯
+		// replace ë©”ì†Œë“œë¥¼ ì‚¬ìš©í•˜ì—¬ Hi, Java -> Hello, Java ë¡œ ì¹˜í™˜
 		obj.replace(0, 2, "Hello");
 		System.out.println(obj);
 	}
-
 }
