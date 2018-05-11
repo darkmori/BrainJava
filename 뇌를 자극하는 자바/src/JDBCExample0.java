@@ -12,10 +12,10 @@ class JDBCExample0 {
 
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "12345");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/malldb", "root", "12345");
 			System.out.println("데이터베이스에 접속했습니다.");
 			stmt = conn.createStatement();
-			rs = stmt.executeQuery("select pname, address, phoneno from custinfo");
+			rs = stmt.executeQuery("select custinfoname, address, phoneno from custinfo");
 			System.out.println("이름====================주소================전화번호");
 
 			while (rs.next()) {
