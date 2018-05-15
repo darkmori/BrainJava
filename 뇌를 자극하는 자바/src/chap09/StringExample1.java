@@ -14,12 +14,17 @@ public class StringExample1 {
 
 		String str1 = new String("Hello, Java");
 		String str2 = new String("Hello, Java");
-		String str3 = new String("Hello, Java");
+		// String str3 = new String("Hello, Java");
+		// String str1 = "Hello, Java";
+		// String str2 = "Hello, Java";
 
-		System.out.println(str1);
-		System.out.println(str2);
-		System.out.println(str3);
+		// System.out.println(str1);
+		// System.out.println(str2);
 
+		if (str1.equals(str2))
+			System.out.println("같다");
+		else
+			System.out.println("다르다");
 	}
 
 }
