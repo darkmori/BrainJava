@@ -6,9 +6,9 @@ class Account { // 부모클래스
 	int balance;
 
 	public Account(String accountNo, String ownerName, int balance) {
-		 this.accountNo=accountNo;
-		 this.ownerName=ownerName;
-		 this.balance=balance;
+		this.accountNo = accountNo;
+		this.ownerName = ownerName;
+		this.balance = balance;
 	}
 
 	void deposit(int amount) {
