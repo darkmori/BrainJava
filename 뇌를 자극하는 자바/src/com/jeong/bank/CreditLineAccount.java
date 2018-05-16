@@ -11,6 +11,7 @@ class CreditLineAccount extends Account {
 	int withdraw(int amount) throws Exception {
 		if ((balance + creditLine) < amount)
 			throw new Exception("인출이 불가능합니다");
+		balance -= amount;
 		return amount;
 
 	}
