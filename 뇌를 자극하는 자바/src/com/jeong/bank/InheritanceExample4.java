@@ -1,6 +1,6 @@
 package com.jeong.bank;
 
-class InheritanceExample {
+class InheritanceExample4 {
 
 	public static void main(String[] args) {
 		BonusPointAccount obj = new BonusPointAccount("333-33-333333", "김미영", 0, 0);
