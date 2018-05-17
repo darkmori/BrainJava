@@ -15,7 +15,7 @@ class Account { // 부모클래스
 		balance += amount;
 	}
 
-	int withdrow(int amount) throws Exception {
+	int withdraw(int amount) throws Exception {
 		if (balance < amount)
 			throw new Exception("잔액이 부족합니다.");
 		return amount;
