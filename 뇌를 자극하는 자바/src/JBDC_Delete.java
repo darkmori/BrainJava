@@ -11,37 +11,37 @@ import java.sql.Statement;
 
 public class JBDC_Delete {
 	public static void main(String args[]) {
-		// 1´Ü°è: DB¿¬°áÀ» À§ÇÑ Ä¿³Ø¼Ç ÀÎÅÍÆäÀÌ½º
+		// 1ë‹¨ê³„: DBì—°ê²°ì„ ìœ„í•œ ì»¤ë„¥ì…˜ ì¸í„°í˜ì´ìŠ¤
 		Connection conn = null;
-		// Statement Interface - SQL ½ÇÇà.
+		// Statement Interface - SQL ì‹¤í–‰.
 		Statement stmt = null;
-		// ResultSet Interface - SQL °á°ú¸¦ ÀúÀå
+		// ResultSet Interface - SQL ê²°ê³¼ë¥¼ ì €ì¥
 		ResultSet rs = null;
-		// try~catch¹®¿¡¼­ DB¿¬°áÁß¿¡ ¿¹¿Ü°¡ ¹ß»ıÇÏ´ÂÁö¸¦ °Ë»ç.
+		// try~catchë¬¸ì—ì„œ DBì—°ê²°ì¤‘ì— ì˜ˆì™¸ê°€ ë°œìƒí•˜ëŠ”ì§€ë¥¼ ê²€ì‚¬.
 		try {
 			String jumincd = null;
 			String pname = null;
 			String gender = null;
 			int age = 0;
-			// 2´Ü°è :JDBCµå¶óÀÌ¹ö¸¦ ·ÎµåÇÑ´Ù
+			// 2ë‹¨ê³„ :JDBCë“œë¼ì´ë²„ë¥¼ ë¡œë“œí•œë‹¤
 			Class.forName("com.mysql.jdbc.Driver");
-			// 3´Ü°è: µå¶óÀÌ¹ö¸Å´ÏÀú Å¬·¡½º´Â DB¸¦ ¿¬°áÇÑ´Ù.
+			// 3ë‹¨ê³„: ë“œë¼ì´ë²„ë§¤ë‹ˆì € í´ë˜ìŠ¤ëŠ” DBë¥¼ ì—°ê²°í•œë‹¤.
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "12345");
-			System.out.println("µ¥ÀÌÅÍº£ÀÌ½º¿¡ Á¢¼ÓÇß½À´Ï´Ù.");
+			System.out.println("ë°ì´í„°ë² ì´ìŠ¤ì— ì ‘ì†í–ˆìŠµë‹ˆë‹¤.");
 
-			// DB SQLÀÛ¾÷
+			// DB SQLì‘ì—…
 			stmt = conn.createStatement();
-			String sql = "delete from person where pname = '" + args[0] + "'";// È«±æµ¿'
+			String sql = "delete from person where pname = '" + args[0] + "'";// í™ê¸¸ë™'
 			int changeRecord = stmt.executeUpdate(sql);
 
-			// 4´Ü°è: DB¿¬°áÀ» Á¾·áÇÑ´Ù.
+			// 4ë‹¨ê³„: DBì—°ê²°ì„ ì¢…ë£Œí•œë‹¤.
 			conn.close();
 			if (changeRecord > 0)
-				System.out.println(changeRecord + "°ÇÀÌ »èÁ¦ µÇ¾ú½À´Ï´Ù.");
+				System.out.println(changeRecord + "ê±´ì´ ì‚­ì œ ë˜ì—ˆìŠµë‹ˆë‹¤.");
 			else
-				System.out.println("»èÁ¦µÈ µ¥ÀÌÅÍ´Â ¾ø½À´Ï´Ù.");
+				System.out.println("ì‚­ì œëœ ë°ì´í„°ëŠ” ì—†ìŠµë‹ˆë‹¤.");
 		} catch (ClassNotFoundException cnfe) {
-			System.out.println("ÇØ´ç Å¬·¡½º¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù." + cnfe.getMessage());
+			System.out.println("í•´ë‹¹ í´ë˜ìŠ¤ë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤." + cnfe.getMessage());
 
 		} catch (SQLException se) {
 			System.out.println(se.getMessage());

@@ -1,6 +1,6 @@
 package com.jeong.bank;
 
-class Account { // 부모클래스
+abstract class Account { // 부모클래스
 	String accountNo;
 	String ownerName;
 	int balance;
