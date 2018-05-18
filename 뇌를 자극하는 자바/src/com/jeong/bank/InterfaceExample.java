@@ -10,12 +10,22 @@ public class InterfaceExample {
 		// obj1.checkIn();
 		// obj2.checkIn();
 
-		Landable obj = new SeparateVolume("863?774개", "개미", "베르나르 베르베르");
-		obj.checkOut("김영숙", "20180508");
+		Lendable obj = new SeparateVolume("863?774개", "개미", "베르나르 베르베르");
+		try {
+			obj.checkOut("김영숙", "20180508");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		obj.checkIn();
 
 		obj = new AppCDInfo("2005-7001", "Redhat Fedora");
-		obj.checkOut("박희경", "20180515");
+		try {
+			obj.checkOut("박희경", "20180515");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		obj.checkIn();
 	}
 

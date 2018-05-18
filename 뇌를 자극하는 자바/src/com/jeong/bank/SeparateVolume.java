@@ -1,6 +1,6 @@
 package com.jeong.bank;
 
-class SeparateVolume implements Landable {
+class SeparateVolume implements Lendable {
 	String requestNo;
 	String bookTitle;
 	String writer;
@@ -9,7 +9,6 @@ class SeparateVolume implements Landable {
 	byte state;
 
 	SeparateVolume(String requestNo, String bookTitle, String writer) {
-		super();
 		this.requestNo = requestNo;
 		this.bookTitle = bookTitle;
 		this.writer = writer;
@@ -18,11 +17,11 @@ class SeparateVolume implements Landable {
 	@Override
 	public void checkOut(String borrower, String date) {
 		// TODO Auto-generated method stub
-		if (state != 0)
+		if (state != STATE_NOMAL) // if(state==STATE_BORROWED
 			return;
 		this.borrower = borrower;
 		this.checkOutDate = date;
-		this.state = 1;
+		this.state = STATE_BORROWED;
 		System.out.println("*" + bookTitle + "이(가) 대출되었습니다.");
 		System.out.println("대출인: " + borrower);
 		System.out.println("대출날짜: " + date + "\n");
@@ -33,7 +32,7 @@ class SeparateVolume implements Landable {
 		// TODO Auto-generated method stub
 		this.borrower = null;
 		this.checkOutDate = null;
-		this.state = 0;
+		this.state = STATE_NOMAL;
 		System.out.println("*" + bookTitle + "이(가) 반납되었습니다.\n");
 
 	}

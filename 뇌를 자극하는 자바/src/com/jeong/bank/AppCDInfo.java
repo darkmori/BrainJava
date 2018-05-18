@@ -1,6 +1,6 @@
 package com.jeong.bank;
 
-public class AppCDInfo extends CDInfo implements Landable {
+public class AppCDInfo extends CDInfo implements Lendable {
 
 	String borrower;
 	String checkOutDate;
