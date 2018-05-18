@@ -25,6 +25,7 @@ class SeparateVolume implements Landable {
 		this.state = 1;
 		System.out.println("*" + bookTitle + "이(가) 대출되었습니다.");
 		System.out.println("대출인: " + borrower);
+		System.out.println("대출날짜: " + date + "\n");
 	}
 
 	@Override

@@ -30,6 +30,8 @@ public class Calculator {
 		Calculator cal = new Calculator();
 		int result = cal.plus(num1, num2, num3);
 		System.out.println("result: " + result);
+		
+		scan.close();
 	}
 
 }
