@@ -10,7 +10,7 @@ public interface Lendable {
 	// void checkIn();
 
 	// 추상메소드
-	abstract void checkOut(String borrwer, String date) throws Exception;
+	abstract void checkOut(String borrower, String date) throws Exception;
 
 	abstract void checkIn();
 }

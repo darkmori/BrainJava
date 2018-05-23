@@ -3,7 +3,7 @@ package chap06;
 public class Rectangle implements Transformable {
 	int x, y, width, height;
 
-	Rectangle(int x, int y, int width, int height) {
+	Rectangle(int x) {
 		super();
 		this.x = x;
 		this.y = y;
