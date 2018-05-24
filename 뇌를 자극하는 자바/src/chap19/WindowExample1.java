@@ -16,7 +16,7 @@ public class WindowExample1 {
 		frame.setPreferredSize(new Dimension(300, 200));
 		Container contentPane = frame.getContentPane();
 
-		JLabel label = new JLabel("Hello, Java", SwingConstants.CENTER);
+		JLabel label = new JLabel("ういっす", SwingConstants.CENTER);
 		contentPane.add(label);
 
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
