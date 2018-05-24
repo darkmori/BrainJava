@@ -2,8 +2,6 @@ package chap19;
 
 import java.awt.Color;
 import java.awt.Container;
-import java.awt.GridLayout;
-
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -17,7 +15,7 @@ public class WindowExample5 {
 		// 색상
 		Color color = new Color(205, 250, 100);
 		frame.getContentPane().setBackground(color);
-		
+
 		Container contentPane = frame.getContentPane();
 		BoxLayout layout = new BoxLayout(contentPane, BoxLayout.X_AXIS);
 		contentPane.setLayout(layout);
