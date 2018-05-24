@@ -7,7 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
-public class WindowRxample1 {
+public class WindowExample1 {
 
 	public static void main(String[] args) {
 
