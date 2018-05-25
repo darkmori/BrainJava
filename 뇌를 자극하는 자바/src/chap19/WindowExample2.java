@@ -3,6 +3,7 @@ package chap19;
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
+import java.awt.TextField;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -24,7 +25,7 @@ public class WindowExample2 {
 
 		Container contentPane = frame.getContentPane();
 
-		JTextField text = new JTextField();
+		JTextField text = new JTextField("이름을 입력하세요");
 		// JTextField text2 = new JTextField();
 		// JPanel jPanel = new JPanel();
 		// jPanel.add(text);
@@ -42,6 +43,7 @@ public class WindowExample2 {
 		ActionListener listener = new ConfirmButtonActionListener(text, label);
 		button.addActionListener(listener);
 
+		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.pack();
 		frame.setVisible(true);
