@@ -6,6 +6,8 @@ import java.awt.*;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
+import com.koseal.kmove30JD.JDBC_Manager;
+
 public class WindowExample8 {
 
 	public static void main(String[] args) {
@@ -40,6 +42,17 @@ public class WindowExample8 {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.pack();
 		frame.setVisible(true);
+
+		System.out.println("프로그램 시작");
+
+		JDBC_Manager jdbcManager = new JDBC_Manager();
+		try {
+			jdbcManager.DBConnection("jdbc:mysql://localhost:3306/mysql", "root", "12345");
+		} catch (ClassNotFoundException cnfe) {
+			System.out.println("해당 클래스를 찾을수 없습니다." + cnfe.getMessage());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
 	}
 
