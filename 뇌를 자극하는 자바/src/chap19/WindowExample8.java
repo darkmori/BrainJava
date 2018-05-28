@@ -11,9 +11,10 @@ import com.koseal.kmove30JD.JDBC_Manager;
 public class WindowExample8 {
 
 	public static void main(String[] args) {
+		JDBC_Manager jdbc_Manager = new JDBC_Manager();
 
 		JFrame frame = new JFrame("참가자 명단 프로그램");
-		frame.setPreferredSize(new Dimension(400, 200));
+		frame.setPreferredSize(new Dimension(450, 250));
 		frame.setLocation(500, 400);
 
 		Container contentPane = frame.getContentPane();
@@ -22,20 +23,29 @@ public class WindowExample8 {
 		JTable table = new JTable(model);
 		contentPane.add(new JScrollPane(table), BorderLayout.CENTER);
 		JPanel panel = new JPanel();
-		JTextField text1 = new JTextField(6);
+
+		JTextField text1 = new JTextField(4);
 		JTextField text2 = new JTextField(3);
 		JTextField text3 = new JTextField(2);
+
+		JButton selectBtn = new JButton("조회");
 		JButton button1 = new JButton("추가");
 		JButton button2 = new JButton("삭제");
+
 		panel.add(new JLabel("이름"));
 		panel.add(text1);
 		panel.add(new JLabel("나이"));
 		panel.add(text2);
 		panel.add(new JLabel("성별"));
 		panel.add(text3);
+
+		panel.add(selectBtn);
 		panel.add(button1);
 		panel.add(button2);
 		contentPane.add(panel, BorderLayout.SOUTH);
+
+		// 조회버튼 이벤트 리스너 등록
+		selectBtn.addActionListener(new SelectActionListener(jdbc_Manager, table));
 
 		button1.addActionListener(new AddActionListener(table, text1, text2, text3));
 		button2.addActionListener(new RemoveActionListener(table));
@@ -45,9 +55,8 @@ public class WindowExample8 {
 
 		System.out.println("프로그램 시작");
 
-		JDBC_Manager jdbcManager = new JDBC_Manager();
 		try {
-			jdbcManager.DBConnection("com.mysql.jdbc.Driver", "jdbc:mysql://localhost:3306/mysql", "root", "12345");
+			jdbc_Manager.DBConnection("com.mysql.jdbc.Driver", "jdbc:mysql://localhost:3306/malldb", "root", "12345");
 			System.out.println("데이터베이스에 접속했습니다.");
 			frame.setTitle("참가자 명단 프로그램 -DB접속 성공");
 		} catch (ClassNotFoundException cnfe) {
