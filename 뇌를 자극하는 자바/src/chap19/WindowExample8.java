@@ -47,11 +47,15 @@ public class WindowExample8 {
 
 		JDBC_Manager jdbcManager = new JDBC_Manager();
 		try {
-			jdbcManager.DBConnection("jdbc:mysql://localhost:3306/mysql", "root", "12345");
+			jdbcManager.DBConnection("com.mysql.jdbc.Driver", "jdbc:mysql://localhost:3306/mysql", "root", "12345");
+			System.out.println("데이터베이스에 접속했습니다.");
+			frame.setTitle("참가자 명단 프로그램 -DB접속 성공");
 		} catch (ClassNotFoundException cnfe) {
 			System.out.println("해당 클래스를 찾을수 없습니다." + cnfe.getMessage());
+			frame.setTitle("참가자 명단 프로그램 -DB접속 실패");
 		} catch (Exception e) {
 			e.printStackTrace();
+			frame.setTitle("참가자 명단 프로그램 -DB접속 실패");
 		}
 
 	}
