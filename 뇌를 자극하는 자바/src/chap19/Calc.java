@@ -24,7 +24,6 @@ public class Calc {
 		JTextField text1 = new JTextField(5);
 		JTextField text2 = new JTextField(5);
 		JTextField result = new JTextField(5);
-
 		JButton submitBtn = new JButton("확인");
 		JButton cancleBtn = new JButton("취소");
 
