@@ -1,4 +1,4 @@
-package com.koseal.kmove30JD;
+package com.koseal.kmove30;
 
 import java.sql.DriverManager;
 import java.sql.ResultSet;

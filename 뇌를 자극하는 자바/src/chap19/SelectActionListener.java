@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-import com.koseal.kmove30JD.JDBC_Manager;
+import com.koseal.kmove30.JDBC_Manager;
 
 public class SelectActionListener implements ActionListener {
 

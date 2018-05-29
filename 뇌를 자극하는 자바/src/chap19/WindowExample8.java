@@ -6,7 +6,7 @@ import java.awt.*;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
-import com.koseal.kmove30JD.JDBC_Manager;
+import com.koseal.kmove30.JDBC_Manager;
 
 public class WindowExample8 {
 
