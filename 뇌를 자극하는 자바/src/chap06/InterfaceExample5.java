@@ -13,7 +13,6 @@ class InterfaceExample5 {
 	}
 
 	static void printLabel(Label obj) {
-		// TODO Auto-generated method stub
 		System.out.printf("%s: %d x %d 배경색(%s) 전경색(%s) 폰트(%s) %n", obj.text, obj.width, obj.height, obj.background,
 				obj.foreground, obj.font);
 

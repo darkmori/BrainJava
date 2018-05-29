@@ -8,12 +8,10 @@ public class AppCDInfo extends CDInfo implements Lendable {
 
 	AppCDInfo(String registerNo, String title) {
 		super(registerNo, title);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void checkOut(String borrwer, String date) {
-		// TODO Auto-generated method stub
 		if (state != 0)
 			return;
 		this.borrower = borrwer;

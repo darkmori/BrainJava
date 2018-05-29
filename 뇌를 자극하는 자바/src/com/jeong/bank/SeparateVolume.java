@@ -16,7 +16,6 @@ class SeparateVolume implements Lendable {
 
 	@Override
 	public void checkOut(String borrower, String date) {
-		// TODO Auto-generated method stub
 		if (state != STATE_NOMAL) // if(state==STATE_BORROWED
 			return;
 		this.borrower = borrower;
@@ -29,7 +28,6 @@ class SeparateVolume implements Lendable {
 
 	@Override
 	public void checkIn() {
-		// TODO Auto-generated method stub
 		this.borrower = null;
 		this.checkOutDate = null;
 		this.state = STATE_NOMAL;

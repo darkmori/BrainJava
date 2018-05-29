@@ -14,7 +14,6 @@ public class InterfaceExample {
 		try {
 			obj.checkOut("김영숙", "20180508");
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		obj.checkIn();
@@ -23,7 +22,6 @@ public class InterfaceExample {
 		try {
 			obj.checkOut("박희경", "20180515");
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		obj.checkIn();

@@ -3,7 +3,6 @@ package com.jeong.bank;
 public class InterfaceExample2 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Lendable arr[] = new Lendable[3];
 		arr[0] = new SeparateVolume("88ㅇ326ㅍ2", "푸코의 진자", "에코");
 		arr[1] = new SeparateVolume("609.2ㄱ428ㅅ", "서양미술사", "곰브리치");
@@ -17,7 +16,6 @@ public class InterfaceExample2 {
 			try {
 				arr[cnt].checkOut(borrower, date);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 	}

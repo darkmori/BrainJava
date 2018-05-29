@@ -18,20 +18,17 @@ public class Label implements Changeable {
 
 	@Override
 	public void resize(int width, int height) {
-		// TODO Auto-generated method stub
 		this.width = width;
 		this.height = height;
 	}
 
 	@Override
 	public void setForeground(String color) {
-		// TODO Auto-generated method stub
 		this.foreground = color;
 	}
 
 	@Override
 	public void setBackground(String color) {
-		// TODO Auto-generated method stub
 		this.background = color;
 	}
 

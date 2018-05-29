@@ -23,6 +23,13 @@ public class RemoveActionListener implements ActionListener {
 			return;
 		DefaultTableModel model = (DefaultTableModel) table.getModel();
 		model.removeRow(row);
+
+		// 삭제될 이름
+		Object name = table.getValueAt(row, 0);
+		String deleteName = name.toString();
+		System.out.println(deleteName);
+
+		model.removeRow(row); // 선택된 행을 삭제
 	}
 
 }

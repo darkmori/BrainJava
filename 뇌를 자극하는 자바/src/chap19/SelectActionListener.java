@@ -13,38 +13,51 @@ public class SelectActionListener implements ActionListener {
 
 	// 속성
 	JTable table;
-	JDBC_Manager jdbc_Manager;
+	JDBC_Manager jdbcManager;
 	ResultSet rs;
 
 	// 생성자
-	SelectActionListener(JDBC_Manager jdbc_Manager, JTable table) {
+	public SelectActionListener(JDBC_Manager jdbcManager, JTable table) {
 		super();
-		this.jdbc_Manager = jdbc_Manager;
+		this.jdbcManager = jdbcManager;
 		this.table = table;
 	}
 
 	// 메소드
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+
+		System.out.println("조회버튼");
+
 		String query = "select pname, age, gender from person";
 		String arr[] = new String[3];
 		// arr[0] = text1.getText();
 		// arr[1] = text2.getText();
 		// arr[2] = text3.getText();
 		DefaultTableModel model = (DefaultTableModel) table.getModel();
-		try {
-			rs = jdbc_Manager.SelectTable(query);
 
+		try {
+			rs = jdbcManager.SelectTable(query);
+			model.setNumRows(0);
 			while (rs.next()) {
 				arr[0] = rs.getString("pname");
 				arr[1] = rs.getString("age");
-				arr[2] = rs.getString("gender");
+
+				// 성별을 남/여 구분값으로 변경
+				arr[2] = rs.getString("gender").equals("m") ? "남" : "여";
+				System.out.println(arr[0] + " " + arr[1] + " " + arr[2]);
+				model.addRow(arr); // 데이터를 테이블에 추
 			}
+
 		} catch (Exception ex) {
-			// TODO Auto-generated catch block
-			ex.printStackTrace();
+			ex.getMessage();
 		}
+
+		// int row = table.getSelectedRow();
+		// int col = table.getSelectedColumn();
+		// Object value = table.getValueAt(0, 0);
+		// System.out.println((String) value);
+
 	}
 
 }

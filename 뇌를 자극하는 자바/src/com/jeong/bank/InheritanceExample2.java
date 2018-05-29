@@ -3,7 +3,6 @@ package com.jeong.bank;
 class InheritanceExample2 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		CheckingAccount obj = new CheckingAccount("111-22-33333333", "홍길동", 0, "5555-6666-7777-8888");
 		obj.deposit(100000);
 		try {

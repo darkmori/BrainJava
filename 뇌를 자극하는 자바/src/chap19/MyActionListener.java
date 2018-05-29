@@ -7,7 +7,6 @@ class MyActionListener implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
 
 		JButton b = (JButton) e.getSource();
 		if (b.getText().equals("Action"))

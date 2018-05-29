@@ -62,7 +62,7 @@ public class AddressBookDAO {
 		return result;
 	}
 
-	ArrayList searchDB(String name, String phone) {
+	ArrayList<AddressBookDTO> searchDB(String name, String phone) {
 		ArrayList<AddressBookDTO> arr = new ArrayList<AddressBookDTO>();
 		// ArratList클래스는 List계열 Collection으로 동일한 데이터형의 값을 배열
 		// 형태로 저장(배열보다 다양한 메서드를 제공)

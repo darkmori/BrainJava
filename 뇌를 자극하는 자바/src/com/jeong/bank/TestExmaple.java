@@ -10,7 +10,6 @@ public class TestExmaple {
 	}
 
 	static void checkOutAll(Lendable arr[], String borrower, String date) {
-		// TODO Auto-generated method stub
 		for (Lendable obj : arr) {
 			try {
 				obj.checkOut(borrower, date);

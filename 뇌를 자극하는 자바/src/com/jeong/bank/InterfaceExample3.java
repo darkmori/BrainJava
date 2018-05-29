@@ -17,7 +17,6 @@ class InterfaceExample3 {
 		try {
 			obj.checkOut("홍길동", strDate);
 		} catch (Exception e) {
-			// TODO: handle exception
 			e.printStackTrace();
 			System.out.println(e.getMessage());
 		}
