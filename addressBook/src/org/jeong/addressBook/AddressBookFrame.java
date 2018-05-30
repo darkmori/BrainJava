@@ -11,15 +11,13 @@ import java.awt.Container;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 public class AddressBookFrame extends JFrame {
-	//프로젝트에서 사용할 멤버 변수 정의
+	// 프로젝트에서 사용할 멤버 변수 정의
 	Container cpane;
 	JLabel name;
 	JLabel address;
@@ -37,7 +35,7 @@ public class AddressBookFrame extends JFrame {
 	JButton back;
 	JButton clear;
 	JButton exit;
-	
+
 	// Swing울 이용한 Frame클래스는 JFrame을 상속해서 만들어줌
 	// JFrame은 타이틀바,창조절버튼.테두리를 제공하는 기본창으로 Container
 	// 파라메터로 문자열로된 이름(타이틀방의 제목)을 받는 생성자를 각성
@@ -210,18 +208,17 @@ public class AddressBookFrame extends JFrame {
 		cpane.add(exit, gc62);
 
 		/**
-		 *이벤트 처리 (Jbutton, JTextField 객체)를 위해 각 컴퍼넌트의 이벤트 처리를 등록해주어야 함 
-		 * JButton,JTextField컴포넌트는 ActionEvent를 발생
-		 * ActionEvent처리를 위한 청취자는 ActionListener인터페이스 이용
-		 * Listener객체를 생성하여 각 컴포넌트에 리스너를 등록 컴포넌트 
+		 * 이벤트 처리 (Jbutton, JTextField 객체)를 위해 각 컴퍼넌트의 이벤트 처리를 등록해주어야 함
+		 * JButton,JTextField컴포넌트는 ActionEvent를 발생 ActionEvent처리를 위한 청취자는
+		 * ActionListener인터페이스 이용 Listener객체를 생성하여 각 컴포넌트에 리스너를 등록 컴포넌트
 		 * 객체명.addActionListener(리스너 객체);
 		 */
 
 		// Listener객체 만들기
 		AddressBookListener al = new AddressBookListener(this);
-		//this는 AddressBookFrame 자신클래스의 객체임
-		//각각의 컴포넌트 객체에 Listener을 등록해주면 이벤트 발생 여부를 청취
-		//청취중 이벤트가 발생하면 actionPerformed(ActionEvent e)메소드를 콜백
+		// this는 AddressBookFrame 자신클래스의 객체임
+		// 각각의 컴포넌트 객체에 Listener을 등록해주면 이벤트 발생 여부를 청취
+		// 청취중 이벤트가 발생하면 actionPerformed(ActionEvent e)메소드를 콜백
 		nameText.addActionListener(al);
 		addressText.addActionListener(al);
 		phoneText.addActionListener(al);
@@ -234,7 +231,6 @@ public class AddressBookFrame extends JFrame {
 		clear.addActionListener(al);
 		exit.addActionListener(al);
 		search.addActionListener(al);
-		
 
 	};
 }

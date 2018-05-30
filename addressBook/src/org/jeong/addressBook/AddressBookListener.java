@@ -7,7 +7,6 @@ package org.jeong.addressBook;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.security.Permissions;
 import java.util.ArrayList;
 
 import javax.swing.JOptionPane;

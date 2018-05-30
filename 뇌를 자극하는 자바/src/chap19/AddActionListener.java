@@ -7,13 +7,18 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
+import com.koseal.kmove30.JDBC_Manager;
+
 public class AddActionListener implements ActionListener {
 
+	JDBC_Manager jdbc_Manager;
 	JTable table;
 	JTextField text1, text2, text3;
 
-	AddActionListener(JTable table, JTextField text1, JTextField text2, JTextField text3) {
+	public AddActionListener(JDBC_Manager jdbc_Manager, JTable table, JTextField text1, JTextField text2,
+			JTextField text3) {
 		super();
+		this.jdbc_Manager = jdbc_Manager;
 		this.table = table;
 		this.text1 = text1;
 		this.text2 = text2;
@@ -29,6 +34,12 @@ public class AddActionListener implements ActionListener {
 		DefaultTableModel model = (DefaultTableModel) table.getModel();
 		boolean isCheck = false;
 
+		Object name = table.getValueAt(0, 0);
+		String addName = name.toString();
+		System.out.println(addName);
+
+		model.addRow(arr);
+
 		for (int i = 0; i < arr.length; i++) {
 			if (arr[i].length() > 0)
 				isCheck = true;
@@ -37,9 +48,15 @@ public class AddActionListener implements ActionListener {
 			System.out.println("arr[" + i + "]:" + arr[i]);
 		}
 
-		if (isCheck)
-			model.addRow(arr); // 레코드에 데이터 추가
-
+		if (isCheck) {
+			model.addRow(arr); // JTable에 데이터 추가
+			// DB insert 추가 작업
+			try {
+				jdbc_Manager.insertTable(arr);
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			}
+		}
 		text1.setText("");
 		text2.setText("");
 		text3.setText("");

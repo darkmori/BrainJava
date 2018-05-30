@@ -47,8 +47,9 @@ public class WindowExample8 {
 		// 조회버튼 이벤트 리스너 등록
 		selectBtn.addActionListener(new SelectActionListener(jdbc_Manager, table));
 
-		button1.addActionListener(new AddActionListener(table, text1, text2, text3));
-		button2.addActionListener(new RemoveActionListener(table));
+		button1.addActionListener(new AddActionListener(jdbc_Manager, table, text1, text2, text3));
+		button2.addActionListener(new RemoveActionListener(jdbc_Manager, table));
+
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.pack();
 		frame.setVisible(true);
