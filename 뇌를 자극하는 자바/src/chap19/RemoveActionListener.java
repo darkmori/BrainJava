@@ -3,6 +3,7 @@ package chap19;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -21,6 +22,15 @@ public class RemoveActionListener implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+
+		int confirm = JOptionPane.showConfirmDialog(null, "삭제하시겠습니까?", "삭제", JOptionPane.YES_NO_OPTION,
+				JOptionPane.INFORMATION_MESSAGE);
+
+		System.out.println("confirm: " + confirm);
+
+		if (confirm == 1)
+			return;
+
 		int row = table.getSelectedRow();
 		if (row == -1)
 			return;
