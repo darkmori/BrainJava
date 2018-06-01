@@ -51,7 +51,8 @@ public class WindowExample8 {
 		selectBtn.addActionListener(new SelectActionListener(jdbc_Manager, table));
 		// addBtn.addActionListener(new AddActionListener(jdbc_Manager, table, text1,
 		// text2, text3));
-		updateBtn.addActionListener(new UpdateActionListener(jdbc_Manager, text1, text2));
+		// updateBtn.addActionListener(new UpdateActionListener(jdbc_Manager, text1,
+		// text2));
 		deleteBtn.addActionListener(new RemoveActionListener(jdbc_Manager, table));
 
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
