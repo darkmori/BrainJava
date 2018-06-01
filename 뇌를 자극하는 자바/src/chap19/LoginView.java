@@ -2,6 +2,7 @@ package chap19;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.ResultSet;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -10,6 +11,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+
+import com.koseal.kmove30.JDBC_Manager;
 
 public class LoginView extends JFrame {
 	private MainProcess main;
@@ -20,6 +23,8 @@ public class LoginView extends JFrame {
 	private JPasswordField passText;
 	private JTextField userText;
 	private boolean bLoginCheck;
+
+	ResultSet rs = null;
 
 	public static void main(String[] args) {
 		// new LoginView();
@@ -62,9 +67,10 @@ public class LoginView extends JFrame {
 		passText.setBounds(100, 40, 160, 25);
 		panel.add(passText);
 		passText.addActionListener(new ActionListener() {
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				isLoginCheck();
+				// isLoginCheck(userText.getText(), passText.getPassword().toString());
 			}
 		});
 
@@ -82,26 +88,65 @@ public class LoginView extends JFrame {
 		btnLogin = new JButton("Login");
 		btnLogin.setBounds(160, 80, 100, 25);
 		panel.add(btnLogin);
+
 		btnLogin.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				isLoginCheck();
+				isLoginCheck(userText.getText(), new String(passText.getPassword()));
 			}
 		});
 	}
 
-	public void isLoginCheck() {
-		if (userText.getText().equals("test") && new String(passText.getPassword()).equals("1234")) {
-			JOptionPane.showMessageDialog(null, "LogIn Success");
-			bLoginCheck = true;
+	public void isLoginCheck(String id, String password) {
 
-			// 로그인 성공이라면 매니져창 뛰우기
-			if (isLogin()) {
-				main.showFrameTest(); // 메인창 메소드를 이용해 창뛰우기
+		JDBC_Manager jdbc_Manager = new JDBC_Manager();
+		String idCheckQuery = "select id, password from member where id ='" + id + "'";
+
+		try {
+			jdbc_Manager.DBConnection("com.mysql.jdbc.Driver", "jdbc:mysql://localhost:3306/malldb", "root", "12345");
+			rs = jdbc_Manager.SelectTable(idCheckQuery);
+
+			if (rs.next()) {
+				System.out.println(rs.getString(1) + "---" + rs.getString(2));
+				// 아이디가 존재하면 패스워드 비교
+
+				System.out.println("아이디존재");
+
+				if (password.equals(rs.getString("password"))) {
+					System.out.println("비밀번호성공");
+					// 로그인 성공
+					JOptionPane.showMessageDialog(null, "LogIn Success");
+					bLoginCheck = true;
+
+					// 로그인 성공이라면 매니저창 띄우기
+					if (isLogin()) {// if (bLoginCheck) {
+						main.showFrameTest(); // 메인창 메소드를 이용해 창띄우기
+					}
+				} else {
+					// 패스워드 틀림
+					JOptionPane.showMessageDialog(null, "패스워드가 틀렸습니다");
+				}
+			} else {
+				// 아이디가 없음
+				JOptionPane.showMessageDialog(null, "아이디가 존재하지 않습니다");
+
 			}
-		} else {
-			JOptionPane.showMessageDialog(null, "Faild");
+		} catch (Exception e) {
+			// TODO: handle exception
 		}
+		//
+		// if (userText.getText().equals("test") && new
+		// String(passText.getPassword()).equals("1234")) {
+		// JOptionPane.showMessageDialog(null, "LogIn Success");
+		// bLoginCheck = true;
+		//
+		// // 로그인 성공이라면 매니져창 뛰우기
+		// if (isLogin()) {
+		// main.showFrameTest(); // 메인창 메소드를 이용해 창뛰우기
+		// }
+		// } else {
+		// JOptionPane.showMessageDialog(null, "Faild");
+		// }
 	}
 
 	// mainProcess와 연동

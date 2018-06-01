@@ -4,6 +4,10 @@ public class MainProcess {
 	LoginView loginView;
 	TestFrm testFrm;
 
+	public MainProcess() {
+		System.out.println("MainProcess() 생성자");
+	}
+
 	public static void main(String[] args) {
 
 		// 메인클래스 실행
@@ -17,4 +21,5 @@ public class MainProcess {
 		loginView.dispose(); // 로그인창닫기
 		this.testFrm = new TestFrm(); // 테스트프레임 오픈
 	}
+
 }
